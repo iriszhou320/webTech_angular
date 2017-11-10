@@ -1,10 +1,14 @@
 <h2>Courses!</h2>
 <body>
     {{title}}
-    <input type="text" name=""/>
+    <div>
+        <input #myInput type="text" id = "user" ng-model = "input"/>
+        <button type = "submit" (click)="coursesService.saveCourse(myInput.value)">Add Course</button>
     <ul>
         <li *ngFor = "let course of courses">
             {{ course }}
         </li>
     </ul>
+    
+    </div>
 </body>

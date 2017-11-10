@@ -7,19 +7,26 @@ import { appAutoGrowDirective } from '../auto-grow.directive';
   styleUrls: ['./courses.component.css'],
   encapsulation: ViewEncapsulation.None,
   providers: [CoursesService],
-  directives: [appAutoGrowDirective]
+  directives: [appAutoGrowDirective],
+  
 })
 export class CoursesComponent implements OnInit {
-
-constructor(coursesService: CoursesService){
-    this.courses = coursesService.getCourses();
-  }
-   ngOnInit() {
+    
+  
+    // saveCourses(c:String){
+    //     coursesService.saveCourse();
+    //     this.courses = coursesService.getCourses();
+    // }
+   
+   constructor(public coursesService: CoursesService;){
+    this.courses = coursesService.courseList;
   }
   
-  title = "this is a courses title page";
+   ngOnInit() {
+        // this.courses = coursesService.getCourses();
+  }
+  
+  title = "Add your courses here: ";
   courses;
   
-  
-
-}
+ }
